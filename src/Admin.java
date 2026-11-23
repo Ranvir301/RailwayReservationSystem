@@ -1,5 +1,3 @@
-package src;
-
 public class Admin extends User {
 
     public Admin(int userId, String name, String email,
