@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class BookingService {
 
@@ -17,7 +17,7 @@ public class BookingService {
 
     public void bookTicket(User user, Train train, Passenger passenger) {
 
-        // Allocate a seat safely
+        
         int seatNumber = train.bookSeat();
 
         if (seatNumber == 0) {
