@@ -17,9 +17,7 @@ public class BookingTask implements Runnable {
     @Override
     public void run() {
 
-        System.out.println(Thread.currentThread().getName()
-                + " is trying to book a ticket for "
-                + passenger.getName());
+        System.out.println(Thread.currentThread().getName()+ " is trying to book a ticket for "+ passenger.getName());
 
         bookingService.bookTicket(user, train, passenger);
     }
