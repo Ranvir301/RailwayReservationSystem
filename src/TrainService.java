@@ -43,5 +43,29 @@ public class TrainService {
 
         return null;
     }
+    public void searchTrain(Scanner sc) {
+
+        System.out.print("Enter Source: ");
+        String source = sc.nextLine().trim();
+
+        System.out.print("Enter Destination: ");
+        String destination = sc.nextLine().trim();
+
+        boolean found = false;
+
+        for (Train train : TrainData.trains) {
+
+            if (train.getSource().equalsIgnoreCase(source)
+                    && train.getDestination().equalsIgnoreCase(destination)) {
+
+                train.displayTrain();
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No trains found for this route!");
+        }
+    }
 }
 
