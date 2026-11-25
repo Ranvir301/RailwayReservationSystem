@@ -1,8 +1,12 @@
+import java.util.Scanner;
+
 public class TrainService {
 
+    
     public void addTrain(Train train) {
 
         for (Train t : TrainData.trains) {
+
             if (t.getTrainId() == train.getTrainId()) {
                 System.out.println("Train ID already exists!");
                 return;
@@ -13,6 +17,7 @@ public class TrainService {
         System.out.println("Train added successfully!");
     }
 
+    
     public void removeTrain(int trainId) {
 
         Train train = getTrainById(trainId);
@@ -26,16 +31,24 @@ public class TrainService {
         System.out.println("Train removed successfully!");
     }
 
+    
     public void displayAllTrains() {
+
+        if (TrainData.trains.isEmpty()) {
+            System.out.println("No trains available!");
+            return;
+        }
 
         for (Train train : TrainData.trains) {
             train.displayTrain();
         }
     }
 
+    
     public Train getTrainById(int trainId) {
 
         for (Train train : TrainData.trains) {
+
             if (train.getTrainId() == trainId) {
                 return train;
             }
@@ -43,5 +56,30 @@ public class TrainService {
 
         return null;
     }
-}
 
+    
+    public void searchTrain(Scanner sc) {
+
+        System.out.print("Enter Source: ");
+        String source = sc.nextLine().trim();
+
+        System.out.print("Enter Destination: ");
+        String destination = sc.nextLine().trim();
+
+        boolean found = false;
+
+        for (Train train : TrainData.trains) {
+
+            if (train.getSource().equalsIgnoreCase(source)
+                    && train.getDestination().equalsIgnoreCase(destination)) {
+
+                train.displayTrain();
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No trains found for this route!");
+        }
+    }
+}
