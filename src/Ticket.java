@@ -54,27 +54,29 @@ public class Ticket {
 
     public void displayTicket() {
 
-        System.out.println("\n==================================");
-        System.out.println("          RAILWAY TICKET");
-        System.out.println("==================================");
+         synchronized (System.out){
+            System.out.println("\n==================================");
+            System.out.println("          RAILWAY TICKET");
+            System.out.println("==================================");
 
-        System.out.println("PNR          : " + pnr);
-        System.out.println("Passenger    : " + passenger.getName());
-        System.out.println("Age          : " + passenger.getAge());
+            System.out.println("PNR          : " + pnr);
+            System.out.println("Passenger    : " + passenger.getName());
+            System.out.println("Age          : " + passenger.getAge());
 
-        System.out.println("----------------------------------");
+            System.out.println("----------------------------------");
 
-        System.out.println("Train        : " + train.getTrainName());
-        System.out.println("Train ID     : " + train.getTrainId());
-        System.out.println("Route        : " + train.getSource()+ " -> " + train.getDestination());
-        System.out.println("Departure    : " + train.getDepartureTime());
+            System.out.println("Train        : " + train.getTrainName());
+            System.out.println("Train ID     : " + train.getTrainId());
+            System.out.println("Route        : " + train.getSource()+ " -> " + train.getDestination());
+            System.out.println("Departure    : " + train.getDepartureTime());
 
-        System.out.println("----------------------------------");
+            System.out.println("----------------------------------");
 
-        System.out.println("Seat Number  : " + seatNumber);
-        System.out.println("Fare         : Rs. " + fare);
-        System.out.println("Status       : " + status);
+            System.out.println("Seat Number  : " + seatNumber);
+            System.out.println("Fare         : Rs. " + fare);
+            System.out.println("Status       : " + status);
 
-        System.out.println("==================================");
+            System.out.println("==================================");
+        }
     }
 }
