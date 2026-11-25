@@ -9,7 +9,7 @@ public class Ticket {
     private String status;
 
     public Ticket(String pnr, int userId, Train train,
-                 Passenger passenger, int seatNumber, double fare) {
+            Passenger passenger, int seatNumber, double fare) {
 
         this.pnr = pnr;
         this.userId = userId;
@@ -77,4 +77,5 @@ public class Ticket {
 
         System.out.println("==================================");
     }
+
 }
