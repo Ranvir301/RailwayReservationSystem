@@ -40,7 +40,7 @@ public class BookingService {
             tickets.add(ticket);
         }
 
-        System.out.println("\nTicket booked successfully!");
+        
         ticket.displayTicket();
     }
 
