@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class TrainService {
 
     public void addTrain(Train train) {
