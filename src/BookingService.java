@@ -2,14 +2,12 @@ import java.util.*;
 
 public class BookingService {
 
-    private TrainService trainService;
+   
     private ArrayList<Ticket> tickets = new ArrayList<>();
 
     private static int pnrCounter = 1001;
 
-    public BookingService(TrainService trainService) {
-        this.trainService = trainService;
-    }
+    
 
     private synchronized String generatePNR() {
         return "PNR" + pnrCounter++;
